@@ -1,0 +1,111 @@
+<mvc:View controllerName="bus.ticket.userbusbooking.controller.UserInfoPage"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:form="sap.ui.layout.form">
+ 
+            <Page id="page4" title="{i18n>title}" showNavButton="true" navButtonPress="GoToResult">
+                <content>
+                    <Panel>
+                    <VBox id="VBox1" fitContainer="true" 
+                    justifyContent="Center"
+                 alignItems="Center" 
+                 alignContent="Center">
+
+                    
+                
+                <!-- <Button text="Add" type="Emphasized" press="AddField"/> -->
+                <VBox>
+                    <Panel id="Panel1" width="auto" class="sapUiResponsiveMargin" headerText="Traveller-1">
+                        
+                        <HBox fitContainer="true"    
+                        alignItems="Center" 
+                        alignContent="Center">
+                            <Input id="name" placeholder="Enter Traveller Name"/>
+                            <Input id="aaid" placeholder="Enter Traveller Aadhar No"/>
+                            <Input id="age" placeholder="Enter Traveller Age"/>
+                            <ComboBox placeholder="Select Seat Type" xmlns="sap.m" id="box0" >
+                                <items>
+                                    <core:Item xmlns:core="sap.ui.core" key="Entry-11-key" text="Lower"  id="item4"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="Entry-12-key" text="Upper" id="item5"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="Entry-13-key" text="Window" id="item6"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="Entry-14-key" text="Aisle" id="item7"/>
+                                    </items>
+                            </ComboBox>
+                            <ComboBox placeholder="Select Seat Number" xmlns="sap.m" id="box1" >
+                                <core:Item xmlns:core="sap.ui.core" key="{BusRegistrationNo}" text="{SeatId}"/>
+                            </ComboBox>
+                            <Button text="Save" type="Emphasized" press=".SaveTravData1"/>
+                        </HBox>
+                   
+                </Panel>
+            </VBox>
+           
+                <Panel width="auto" class="sapUiResponsiveMargin" headerText="Traveller-2">
+                    <HBox>
+                        <Input id="name1" placeholder="Enter Traveller Name"/>
+                        <Input id="aaid1" placeholder="Enter Traveller Aadhar No"/>
+                        <Input id="age1" placeholder="Enter Traveller Age"/>
+                        <ComboBox placeholder="Select Seat Type" xmlns="sap.m" id="box3" items= "{ path: '/Seat' }" >
+                            <core:Item xmlns:core="sap.ui.core" key="{BusRegistrationNo}" text="{SeatType}"/>
+                        </ComboBox>
+                        <ComboBox placeholder="Select Seat Number" xmlns="sap.m" id="box4" items= "{ path: '/Seat' }" >
+                            <core:Item xmlns:core="sap.ui.core" key="{BusRegistrationNo}" text="{SeatId}"/>
+                        </ComboBox>
+                        <Button text="Save" type="Emphasized" press="SaveTravData"/>
+                    </HBox>
+                </Panel>
+
+                <Panel width="auto" class="sapUiResponsiveMargin" headerText="Traveller-3">
+                    <HBox>
+                        <Input id="name2" placeholder="Enter Traveller Name"/>
+                        <Input id="aaid2" placeholder="Enter Traveller Aadhar No"/>
+                        <Input id="age2" placeholder="Enter Traveller Age"/>
+                        <ComboBox placeholder="Select Seat Type" xmlns="sap.m" id="box5" items= "{ path: '/Seat' }" >
+                            <core:Item xmlns:core="sap.ui.core" key="{BusRegistrationNo}" text="{SeatType}"/>
+                        </ComboBox>
+                        <ComboBox placeholder="Select Seat Number" xmlns="sap.m" id="box6" items= "{ path: '/Seat' }" >
+                            <core:Item xmlns:core="sap.ui.core" key="{BusRegistrationNo}" text="{SeatId}"/>
+                        </ComboBox>
+                        <Button text="Save" type="Emphasized" press="SaveTravData"/>
+                    </HBox>
+                </Panel>
+
+                <Panel width="auto" class="sapUiResponsiveMargin" headerText="Traveller-4">
+                    <HBox>
+                        <Input id="name4" placeholder="Enter Traveller Name"/>
+                        <Input id="aaid4" placeholder="Enter Traveller Aadhar No"/>
+                        <Input id="age4" placeholder="Enter Traveller Age"/>
+                        <ComboBox placeholder="Select Seat Type" xmlns="sap.m" id="box7" items= "{ path: '/Seat' }" >
+                            <core:Item xmlns:core="sap.ui.core" key="{BusRegistrationNo}" text="{SeatType}"/>
+                        </ComboBox>
+                        <ComboBox placeholder="Select Seat Number" xmlns="sap.m" id="box8" items= "{ path: '/Seat' }" >
+                            <core:Item xmlns:core="sap.ui.core" key="{BusRegistrationNo}" text="{SeatId}"/>
+                        </ComboBox>
+                        <Button text="Save" type="Emphasized" press="SaveTravData"/>
+                    </HBox>
+                </Panel>
+                    
+                <Panel width="auto" class="sapUiResponsiveMargin" headerText="Traveller-5">
+                    <HBox>
+                        <Input id="name5" placeholder="Enter Traveller Name"/>
+                        <Input id="aaid5" placeholder="Enter Traveller Aadhar No"/>
+                        <Input id="age5" placeholder="Enter Traveller Age"/>
+                        <ComboBox placeholder="Select Seat Type" xmlns="sap.m" id="box9" items= "{ path: '/Seat' }" >
+                            <core:Item xmlns:core="sap.ui.core" key="{BusRegistrationNo}" text="{SeatType}"/>
+                        </ComboBox>
+                        <ComboBox placeholder="Select Seat Number" xmlns="sap.m" id="box10" items= "{ path: '/Seat' }" >
+                            <core:Item xmlns:core="sap.ui.core" key="{BusRegistrationNo}" text="{SeatId}"/>
+                        </ComboBox>
+                        <Button text="Save" type="Emphasized" press="SaveTravData"/>
+                    </HBox>
+                </Panel>
+                <Button text="Pay Now" type="Emphasized" press="GoToPay"/>
+
+            </VBox>
+        </Panel>
+                </content> 
+            </Page>
+ 
+</mvc:View>

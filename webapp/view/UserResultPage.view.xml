@@ -1,0 +1,104 @@
+<mvc:View controllerName="bus.ticket.userbusbooking.controller.UserResultPage"
+xmlns:smartField="sap.ui.comp.smartfield"
+xmlns:form="sap.ui.comp.smartform"
+xmlns:smartTable="sap.ui.comp.smarttable"
+xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+xmlns:customData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+xmlns:mvc="sap.ui.core.mvc"
+xmlns:core="sap.ui.core"
+displayBlock="true"
+xmlns="sap.m"
+xmlns:l="sap.ui.layout"
+xmlns:f="sap.ui.layout.form"
+ class="sapUiSizeCompact">
+
+    <Page id="page3" title="{i18n>title}" showNavButton="true" navButtonPress="GoToMain">
+        <content>
+            <VBox id="_IDGenVBox1" fitContainer="true"  
+            alignContent="Center">
+
+            <smartFilterBar:SmartFilterBar id="smartFilterBar" persistencyKey="UniqueAndStablePersistencyKey"
+			considerSelectionVariants="true" entitySet="Connection" 
+             showClearButton="true">
+
+             <smartFilterBar:controlConfiguration>
+                <smartFilterBar:ControlConfiguration id="_IDGenControlConfiguration1" key="Origin" label="From" visibleInAdvancedArea="true"/>
+            </smartFilterBar:controlConfiguration>
+            <smartFilterBar:controlConfiguration>
+                <smartFilterBar:ControlConfiguration id="_IDGenControlConfiguration2" key="Destination" label="To" visibleInAdvancedArea="true" />
+            </smartFilterBar:controlConfiguration>
+            <smartFilterBar:controlConfiguration>
+                <smartFilterBar:ControlConfiguration id="_IDGenControlConfiguration3" key="/Date/DateOfJourney" label="Date Of Journey" visibleInAdvancedArea="true" />
+            </smartFilterBar:controlConfiguration>
+            <smartFilterBar:controlConfiguration>
+                <smartFilterBar:ControlConfiguration id="_IDGenControlConfiguration4" key="BusType" label="Type Of Bus" visibleInAdvancedArea="true" />
+            </smartFilterBar:controlConfiguration>
+            <ComboBox id="_IDGenComboBox1" placeholder="No. of Travellers" change=".onFilterChange">
+					<core:Item id="_IDGenItem1" text="1" key="val1" />
+					<core:Item id="_IDGenItem2" text="2" key="val2" />
+					<core:Item id="_IDGenItem3" text="3" key="val3" />
+					<core:Item id="_IDGenItem4" text="4" key="val4" />
+					<core:Item id="_IDGenItem5" text="5" key="val5" />
+				</ComboBox>
+                
+
+		</smartFilterBar:SmartFilterBar>
+            
+        <HBox>
+        <smartTable:SmartTable id="smartTable"
+        entitySet="Connection"
+        smartFilterId="smartFilterBar"
+        tableType="ResponsiveTable"
+        useExportToExcel="true"
+        beforeExport="onBeforeExport"
+        useVariantManagement="false"
+        useTablePersonalisation="true"
+        header="Filter Results"
+        customData:useSmartToggle="true"
+        showRowCount="true"
+        enableAutoBinding="true"
+        class="sapUiResponsiveContentPadding"
+        enableAutoColumnWidth="false"
+        initiallyVisibleFields="Origin,Destination,TotalFare,/SeatsAvailability/NoOfSeatsAvail" >
+
+                <smartTable:layoutData>
+                    <FlexItemData id="_IDGenFlexItemData1" growFactor="1" baseSize="0%"/>
+                </smartTable:layoutData>
+                
+                <Table id="stopData" >
+                    <columns>
+                        <Column>
+                            <customData>
+                                <core:CustomData
+                                    key="p13nData"
+                                    value='\{"columnKey": "None1", "autoColumnWidth": 
+                                    \{ "visibleProperty": "ConnectionId" }, "columnIndex": 10,
+                                     "leadingProperty": "ConnectionId", "sortProperty": "ConnectionId",
+                                      "additionalProperty": "ConnectionId", "description": "ConnectionId", 
+                                      "displayBehaviour": "descriptionOnly", "width": "100px"}'
+                                />
+                            </customData>
+                            <Label text="" />
+                        </Column>
+                        
+                    </columns>
+                    <items>
+                        <ColumnListItem  alignContent="Center">
+                            <cells>
+                                <Button 
+                                    text='Book'
+                                    press="onBookClick" 
+                                    type= "Emphasized"/>
+                            </cells>
+                            
+                        </ColumnListItem>
+                    </items>
+                </Table>
+
+        </smartTable:SmartTable>
+    </HBox>
+            </VBox>
+            
+        </content>
+    </Page>
+</mvc:View>

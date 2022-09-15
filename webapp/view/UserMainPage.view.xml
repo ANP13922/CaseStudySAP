@@ -1,0 +1,66 @@
+<mvc:View controllerName="bus.ticket.userbusbooking.controller.UserMainPage"
+xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+xmlns="sap.m" xmlns:smartform="sap.ui.comp.smartform" height="100%"
+xmlns:l="sap.ui.layout" 	xmlns:html="http://www.w3.org/1999/xhtml" 
+xmlns:f="sap.ui.layout.form"
+xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" 
+xmlns:smartField="sap.ui.comp.smartfield" class="sapUiSizeCompact" >
+
+    <Page id="page2" title="{i18n>title}" showNavButton="true" navButtonPress="GoToLogin">
+        <content>
+            
+            <VBox id="_IDGenVBox11" class="sapUiSmallMargin">
+                <Button id="button" text="Menu" type="Emphasized" press="onPress" ariaHasPopup="Menu"/>
+            </VBox>       
+                
+            <Panel id="Panel1"
+            headerText="{i18n>titleMainPage}"
+            class="sapUiResponsiveMargin"
+            width="auto">                       
+                                   
+                <VBox id="_IDGenVBox1" class="sapUiSmallMargin" justifyContent="Center" 
+                alignItems="Center" alignContent="Center">
+
+                        <items>
+
+                            <Label id="_IDGenLabel1" text="From: " required="true" />
+                            
+                            <ComboBox xmlns="sap.m" id="box0" items= "{ path: '/Stop' }" >
+                                    <core:Item id="_IDGenItem1" xmlns:core="sap.ui.core" key="{StopId}" text="{StopName}"/>
+                            </ComboBox>
+
+                            <Label id="_IDGenLabel3" text="To: " required="true" />
+                      
+                            <ComboBox xmlns="sap.m" id="box1" items= "{ path: '/Stop' }">
+                                    <core:Item id="_IDGenItem2" xmlns:core="sap.ui.core" key="{StopId}" text="{StopName}"/>
+                            
+                            </ComboBox>
+                            
+                            <Label id="_IDGenLabel4" text="No. of Travellers: " required="true"/>
+                           
+                            <ComboBox xmlns="sap.m" id="box2">
+                                    <items>
+                                    <core:Item xmlns:core="sap.ui.core" key="Entry-1-key" text="1"  id="item0"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="Entry-2-key" text="2" id="item1"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="Entry-3-key" text="3" id="item2"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="Entry-4-key" text="4" id="item3"/>
+                                    <core:Item xmlns:core="sap.ui.core" key="Entry-5-key" text="5" id="item4"/>
+                                    </items>
+                            </ComboBox>
+
+                           <Label id="_IDGenLabel5" text="Date of Journey:" required="true"/>
+
+                            <DatePicker id="DP4"
+                    value="{path:'/Date', type:'sap.ui.model.type.Date', formatOptions: { style: 'medium', strictParsing: true}}"
+                    class="sapUiSmallMarginBottom" width="250px"/>
+                <Text id="_IDGenText1" text="{path:'/Date', type:'sap.ui.model.type.Date', formatOptions: { style: 'long'}}" class="sapUiSmallMargin"/>
+
+                            <Button id="Button1" width="12rem" text="Search" type="Emphasized" press="onSearchTap" class="sapUiSmallMarginEnd" />
+                        </items>
+                        
+                </VBox>
+            </Panel>
+                      
+        </content>   
+    </Page>
+</mvc:View>

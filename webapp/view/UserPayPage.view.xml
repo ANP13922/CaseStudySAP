@@ -1,0 +1,23 @@
+<mvc:View controllerName="bus.ticket.userbusbooking.controller.UserPayPage"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:form="sap.ui.layout.form">
+ 
+            <Page id="page89" title="{i18n>title}" showNavButton="true" navButtonPress="GoToInfo" >
+                <content>
+                
+                    <Label text="From: " />
+                    <Text text="{TempDataModel>/From}" />
+
+                        <Label text="FirstName: " />
+                        <Text text="{TempDataModel>/To}" />
+
+                            <Label text="FirstName: " />
+                            <Text text="{TempDataModel>/From}" />
+
+                </content> 
+                
+            </Page>
+ 
+</mvc:View>

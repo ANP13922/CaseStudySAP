@@ -1,0 +1,26 @@
+<mvc:View 
+    controllerName="bus.ticket.userbusbooking.controller.UserInfoPage"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
+    >
+	<!-- <Panel id="Panel1" width="auto" class="sapUiResponsiveMargin" headerText="Traveller-1"> -->
+                        
+        <HBox fitContainer="true"    
+        alignItems="Center" 
+        alignContent="Center">
+            <Input id="name" placeholder="Enter Traveller Name"/>
+            <Input id="aaid" placeholder="Enter Traveller Aadhar No"/>
+            <Input id="age" placeholder="Enter Traveller Age"/>
+            <ComboBox>
+
+            </ComboBox>
+            <ComboBox>
+
+            </ComboBox>
+            <Button text="Save" type="Emphasized" press="SaveTravData"/>
+        </HBox>
+   
+<!-- </Panel> -->
+</mvc:View>

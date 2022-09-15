@@ -1,0 +1,156 @@
+{
+  "_version": "1.37.0",
+  "sap.app": {
+    "id": "bus.ticket.userbusbooking",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.7.3",
+      "toolsId": "3222202b-cc25-458f-b8b1-ddd3bbe6bc7b"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata/sap/ZUI_C_ZBTBCS/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.96.1",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "bus.ticket.userbusbooking.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {"defaultBindingMode": "TwoWay"}
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "bus.ticket.userbusbooking.view",
+        "controlAggregation": "pages",
+        "controlId": "App",
+        "clearControlAggregation": false
+      },
+      "routes": [
+        {
+          "name": "RouteUserMainPage",
+          "pattern": "UserMainPage",
+          "target": "TargetUserMainPage"
+        },
+        {
+          "name": "RouteUserLoginPage",
+          "pattern": "",
+          "target": "TargetUserLoginPage"
+        },
+        {
+          "name": "RouteUserResultPage",
+          "pattern": "UserMainPage/UserResultPage",
+          "target": "TargetUserResultPage"
+        },
+        {
+          "name": "RouteUserInfoPage",
+          "pattern": "UserMainPage/UserResultPage/UserInfoPage",
+          "target": "TargetUserInfoPage"
+        },
+        {
+          "name": "RouteUserPayPage",
+          "pattern": "UserMainPage/UserResultPage/UserInfoPage/UserPayPage",
+          "target": "TargetUserPayPage"
+        }
+      ],
+      "targets": {
+        "TargetUserMainPage": {
+          "viewType": "XML",
+          "viewName": "UserMainPage"
+        },
+        "TargetUserLoginPage": {
+          "viewType": "XML",
+          "viewName": "App"
+        },
+        
+        "TargetUserResultPage": {
+          "viewType": "XML",
+          "viewName": "UserResultPage"
+        },
+        
+        "TargetUserInfoPage": {
+          "viewType": "XML",
+          "viewName": "UserInfoPage"
+        },
+        
+        "TargetUserPayPage": {
+          "viewType": "XML",
+          "viewName": "UserPayPage"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "bus.ticket.userbusbooking.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+    
+  }
+}

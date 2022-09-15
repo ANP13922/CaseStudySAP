@@ -1,0 +1,62 @@
+<mvc:View controllerName="bus.ticket.userbusbooking.controller.UserBookHist"
+xmlns:smartField="sap.ui.comp.smartfield"
+xmlns:form="sap.ui.comp.smartform"
+xmlns:smartTable="sap.ui.comp.smarttable"
+xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+xmlns:customData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+xmlns:mvc="sap.ui.core.mvc"
+xmlns:core="sap.ui.core"
+displayBlock="true"
+xmlns="sap.m"
+xmlns:l="sap.ui.layout"
+xmlns:f="sap.ui.layout.form"
+ class="sapUiSizeCompact">
+
+    <Page id="page5" title="{i18n>title}" showNavButton="true" navButtonPress="GoToMain">
+        <content>
+            <VBox fitContainer="true"  
+            alignContent="Center">
+
+                <smartFilterBar:SmartFilterBar id="smartFilterBar" persistencyKey="UniqueAndStablePersistencyKey"
+			considerSelectionVariants="true" entitySet="Connection" 
+             showClearButton="true">
+
+             <smartFilterBar:controlConfiguration>
+                <smartFilterBar:ControlConfiguration id="xyz1" key="Origin" label="From" visibleInAdvancedArea="true"/>
+            </smartFilterBar:controlConfiguration>
+            <smartFilterBar:controlConfiguration>
+                <smartFilterBar:ControlConfiguration key="Destination" label="To" visibleInAdvancedArea="true" />
+            </smartFilterBar:controlConfiguration>
+            <smartFilterBar:controlConfiguration>
+                <smartFilterBar:ControlConfiguration key="/Date/DateOfJourney" label="date Of Journey" visibleInAdvancedArea="true" />
+            </smartFilterBar:controlConfiguration>
+            
+            
+
+		</smartFilterBar:SmartFilterBar>
+            
+
+       
+        <smartTable:SmartTable id="smartTable_ResponsiveTable"
+		smartFilterId="smartFilterBar"
+		tableType="ResponsiveTable"
+		editable="false"
+		entitySet="Products"
+		useVariantManagement="false"
+		useTablePersonalisation="false"
+		header="Products"
+		showRowCount="true"
+		useExportToExcel="false"
+		enableAutoBinding="true"
+		enableAutoColumnWidth="true">
+                <smartTable:layoutData>
+                    <FlexItemData growFactor="1" baseSize="0%"/>
+                </smartTable:layoutData>
+                
+        </smartTable:SmartTable>
+        
+            </VBox>
+            
+        </content>
+    </Page>
+</mvc:View>

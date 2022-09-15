@@ -1,0 +1,61 @@
+<mvc:View controllerName="bus.ticket.userbusbooking.controller.App"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:layout="sap.ui.layout"
+    xmlns:tnt="sap.tnt">
+    <Shell id="Shell">
+    <App id="App">
+        <pages>
+            <Page id="page1" title="{i18n>title}">
+                <content>
+                    <Panel id="Panel1" 
+							headerText="User Login"
+							class="sapUiResponsiveMargin"
+							width="auto">
+							<VBox id="VBox1" fitContainer="true" 
+								justifyContent="Center"
+							 alignItems="Center" 
+							 alignContent="Center">
+                             <Image id="_IDGenImage1" src="https://www.pinclipart.com/picdir/big/16-160748_bus-clipart-transparent-background-clipart-red-bus-clipart.png" height="100px"/>
+    
+                    <form:SimpleForm id="_IDGenSimpleForm1" editable="true" layout="ResponsiveGridLayout" 
+                    adjustLabelSpan="false" labelSpanL="4" labelSpanM="4" labelSpanS="12" 
+                    columnsL="1" columnsM="1" emptySpanL="4" emptySpanM="4">
+                        <form:content>
+                        <Title id="_IDGenLabel3" text="Welcome User!" TitleAlignment="Center"></Title>
+                            
+                        <Label id="_IDGenLabel4" text="Username"  required="true"></Label>
+                        <Input id="inp_usernameId" value="{UserId}" placeholder="Enter your Username"></Input>
+                        <Label id="_IDGenLabel5" text="Password"  required="true"></Label>
+                        <Input id="inp_passwordId" value="{UserPassword}" type="Password" placeholder="Enter your Password"></Input>
+                        </form:content>
+                    </form:SimpleForm>
+                 <Button id="UserMP" text="Login" type="Emphasized" press="onLoginPress1" ariaLabelledBy="Go to User Main Page"/>
+                </VBox>
+            </Panel>
+                </content> 
+                <footer >
+                    <Bar id="_IDGenBar1">
+                        <contentLeft>
+                            <Text id="_IDGenText1" text="SAP" class="sapUiSmallMargin"></Text>
+                            <Link id="_IDGenLink1" text="Contact Us" class="sapUiSmallMargin" />
+                            <Link id="_IDGenLink2" text="About the site" class="sapUiSmallMargin" />
+                            <Link id="_IDGenLink3" text="Quick Links" class="sapUiSmallMargin" />
+                            <Link id="_IDGenLink4" text="Corporate Travels" class="sapUiSmallMargin" />
+                        </contentLeft>
+                        <contentRight>
+                            <Link id="_IDGenLink5" text="Testimonials" class="sapUiSmallMargin"/>
+                            <Link id="_IDGenLink6" text="Facebook" class="sapUiSmallMargin"/>
+                            <Link id="_IDGenLink7" text="Twitter" class="sapUiSmallMargin"/>
+                            <Link id="_IDGenLink8" text="Instagram" class="sapUiSmallMargin"/>
+                        </contentRight>
+                        
+                    </Bar>
+                </footer>
+            </Page>
+        </pages>
+    </App>
+    </Shell>
+</mvc:View>
